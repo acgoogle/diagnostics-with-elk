@@ -159,7 +159,7 @@
         "description": "Existing diagnostics storage account key."
       }
     },
-    "existingDiagnosticsStorageTableNames": {
+    "existingDiagnosticsStorageContainerNames": {
       "type": "string",
       "defaultValue": "",
       "metadata": {
@@ -205,7 +205,7 @@
     "virtualNetworkName": "elkvnet2",
     "subnetRef": "[concat(resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName')), '/subnets/', 'other')]",
     "esHost": "10.0.2.100",
-    "esTemplateBase": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/elasticsearch",
+    "esTemplateBase": "https://github.com/acgoogle/elasticsearch",
     "esDeploymentName": "esDeploymentForDiagnosticsWithELK"
   },
   "resources": [
@@ -444,7 +444,7 @@
           ]
         },
         "protectedSettings": {
-          "commandToExecute": "[concat('bash ./elk-simple-install-ubuntu.sh -e ', parameters('encodedConfigString'), ' -a ', parameters('existingDiagnosticsStorageAccountName'), ' -k ', parameters('existingDiagnosticsStorageAccountKey'), ' -t ', parameters('existingDiagnosticsStorageTableNames'), ' -i ', variables('esHost'))]"
+          "commandToExecute": "[concat('bash ./elk-simple-install-ubuntu.sh -e ', parameters('encodedConfigString'), ' -a ', parameters('existingDiagnosticsStorageAccountName'), ' -k ', parameters('existingDiagnosticsStorageAccountKey'), ' -t ', parameters('existingDiagnosticsStorageContainerNames'), ' -i ', variables('esHost'))]"
         }
       }
     }
