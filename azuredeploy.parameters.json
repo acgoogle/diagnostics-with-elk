@@ -7,6 +7,15 @@
         },
         "adminPassword": {
             "value": "P@ssw0rd1234!"
+        },
+        "existingDiagnosticsStorageAccountName": {
+            "value": ""
+        },
+        "existingDiagnosticsStorageAccountKey": {
+            "value": ""
+        },
+        "existingDiagnosticsStorageContainerNames": {
+            "value": ""
         }
     }
 }
